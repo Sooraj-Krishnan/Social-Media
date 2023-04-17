@@ -15,8 +15,8 @@ function authenticateToken(req, res, next) {
     // Verify the token using the secret key
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     // Set the user ID in the request object for later use
-    req.userId = (decoded.id);
-    console.log('userID   :', userId);
+    req.userId = decoded.id;
+   // console.log('userID   :', req.userId);
     next();
   } catch (error) {
     // If the token is invalid, return a 403 Forbidden response

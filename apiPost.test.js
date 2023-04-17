@@ -21,7 +21,7 @@ describe('POST /api/posts', () => {
     };
 
     // Mock the JWT token
-    const token = jwt.sign({ id: '61123abc456def7890ghi123' }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ id: '643dc793ddd194849f298aca' }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     // Use supertest to send a POST request to your endpoint
     const response = await request(app)
@@ -45,6 +45,6 @@ describe('POST /api/posts', () => {
     expect(post).toBeTruthy();
     expect(post.title).toBe(requestBody.title);
     expect(post.description).toBe(requestBody.description);
-    expect(post.createdBy).toBe('61123abc456def7890ghi123'); // Update with the desired user ID for testing
+    expect(post.createdBy).toBe('643dc793ddd194849f298aca'); // Update with the desired user ID for testing
   });
 });
